@@ -30,11 +30,19 @@ public:
 
     string parserOutput();
 
-    string verplaatsTram(int spoorNr, string stationsNaam);
+    string verplaatsTram(Tram* tram);
 
-    void addStation(string naam, Station* station);
+    void addStation(string naam, Station* station, bool fault = true);
 
-    void addTram(int lijnNr, Tram* tram);
+    void addTram(int lijnNr, Tram* tram, bool fault = true);
+
+    bool legalInput(string input);
+
+    bool Valid_circuit();
+
+    void properlyparsed();
+
+    string ronde_rijden();
 
 };
 

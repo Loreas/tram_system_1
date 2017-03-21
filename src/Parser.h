@@ -15,13 +15,19 @@
 using namespace std;
 
 class Parser {
+private:
+    System* system;
 public:
     Parser();
+
+    System *getSystem() const;
+
+    void setSystem(System *system);
 
     string getElement(TiXmlElement *elem);
 
     bool legalInput(string input);
 
-    System* XmlParser(string inputFile);
+    bool XmlParser(string inputFile);
 };
 #endif //TRAM_NETWERK_PARSER_H

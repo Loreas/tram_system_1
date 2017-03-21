@@ -1,0 +1,5 @@
+Station A
+<- Station A
+-> Station A
+Spoor 10, 55 zitplaatsen
+

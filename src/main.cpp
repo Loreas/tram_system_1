@@ -9,8 +9,11 @@
 using namespace std;
 
 int main(){
-    Parser* parser;
-    System* system = parser->XmlParser("InputFiles/XML_Test.xml");
+    Parser parser;
+    parser.XmlParser("testInput/StationsNaam.xml");
+    System* system = parser.getSystem();
+    system->properlyparsed();
     cout << system->parserOutput();
+    cout << system->ronde_rijden();
 }
 
