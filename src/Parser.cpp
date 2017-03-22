@@ -18,13 +18,7 @@ string Parser::getElement(TiXmlElement* elem){
     return t;
 }
 
-bool Parser::legalInput(string input){
-    if(input == ""){
-        return false;
-    }
 
-    return true;
-}
 
 bool Parser::XmlParser(string inputFile) {
     bool output = true;

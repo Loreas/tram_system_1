@@ -1,4 +1,4 @@
-# Install script for directory: /home/uauser/Documents/pse/tram_versie734/gtest/lib/googletest-master
+# Install script for directory: /home/loreas/Documents/pse/testje/gtest/lib/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/uauser/Documents/pse/tram_versie734/gtest/lib/googletest-master/googlemock/cmake_install.cmake")
+  include("/home/loreas/Documents/pse/testje/gtest/lib/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 
