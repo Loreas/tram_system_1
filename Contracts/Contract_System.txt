@@ -1,0 +1,39 @@
+Operation Contract System:
+==============================
+
++properlyInitialized(out _initCheck:Station*):
+//Geeft een pointer naar het System object zelf terug
+//Pre: Er bestaat een object.
+//Post: Het object bestaat en is dus juist aangemaakt: De pointer wordt teruggegeven.
+
++getStations(out map<string, Station*> stations):
+//Geeft een map van stations terug. De map bevat een string key die de naam van het Station object bevat.
+//Pre: Er bestaat een map van Station objecten.
+//Post: Indien de map bestaat wordt deze teruggegeven.
+
++getTrams(out map<int, Tram*> trams):
+//Geeft een map van trams terug. De map bevat een integer key die de naam van het Tram object bevat.
+//Pre: Er bestaat een map van Tram objecten.
+//Post: Indien de map bestaat wordt deze teruggegeven.
+
++addStation(in naam:string ; in station:Station object):
+//Voegt een Station object toe aan de map "stations" aan de hand van een string key, die de naam bevat.
+//Pre: Er bestaat een string en een Station object om toe te voegen aan de map.
+//Post: Het Station object is correct toegevoegd aan de map volgens de opgegeven key.
+
++addTram(in LijnNr:integer ; in tram:Tram object):
+//Voegt een Tram object toe aan de map "trams" aan de hand van een integer LijnNr, die het lijnnummer bevat.
+//Pre: Er bestaat een integer en een Tram object om toe te voegen aan de map.
+//Post: Het Tram object is correct toegevoegd aan de map volgens de opgegeven key.
+
++parserOutput(out output:string):
+//Geeft een string terug die de output van het ingelezen XML-bestand bevat.
+//Pre: Er is een XML-bestand ingelezen door de parser-functie in Parser.cpp.
+//Post: De output string wordt correct teruggegeven.
+
++verplaatsTram(in spoorNr:integer ; in stationsNaam: string ; out success: boolean):
+//Het huidige station van een Tram object wordt veranderd naar het volgende station.
+//Pre: Er bestaat een Tram object met een huidig en een volgend station
+//Post: Het huidige station is correct veranderd en de output string die de verandering bevat wordt teruggegeven.
+
+

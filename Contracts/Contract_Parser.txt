@@ -1,0 +1,18 @@
+Operation Contract XML-Parser:
+==============================
+
++getElement(in elem:TiXmlElement object ; out t:string):
+//Geeft de string terug die het ingevoerde TiXmlElement object bevat.
+//Pre: Er bestaat een TiXmlElement.
+//Post: De string is correct aangemaakt en wordt teruggegeven.
+
++legalInput(in input:string ; out success: boolean):
+//Controleert of de input geen lege string is.
+//Pre: Er bestaat een inputstring.
+//Post: Indien de string niet leeg is, wordt er true teruggegeven. Indien de string leeg is, wordt er false teruggegeven.
+
+
++parser(out system:System object):
+//Leest het XML-bestand in en zet de informatie om tot object en variabelen van die object.
+//Pre: Er is een niet-leeg XML-bestand.
+//Post: Het XML-bestand is correct ingelezen en omgevormd, dus kan er een System-object worden teruggegeven.
