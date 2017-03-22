@@ -96,15 +96,15 @@ void System::properlyparsed() {
         REQUIRE(legalInput(it.second->getNaam()), "Name of Station can't be empty.");
         REQUIRE(legalInput(it.second->getVolgende()), "Name of next Station can't be empty.");
         REQUIRE(legalInput(it.second->getVorige()), "Name of previous Station can't be empty.");
-        REQUIRE(legalInput(to_string(it.second->getSpoor())), "Name of track can't be empty.");
+        REQUIRE(it.second->getSpoor() > 0, "Number of track can't be negative.");
 
     }
     for (auto const &it : trams) {
         ENSURE(it.second->properlyInitialized(),
                "Constructor must be initialized properly.");
-        REQUIRE(legalInput(to_string(it.second->getLijnNr())), "Line Number can't be empty.");
-        REQUIRE(legalInput(to_string(it.second->getZitplaatsen())), "Amount of seats can't be none.");
-        REQUIRE(legalInput(to_string(it.second->getSnelheid())), "Speed can't be none.");
+        REQUIRE(it.second->getLijnNr() > 0, "Line Number can't be negative.");
+        REQUIRE(it.second->getZitplaatsen() > 0, "Amount of seats can't be negative.");
+        REQUIRE(it.second->getSnelheid() > 0, "Speed can't be negative.");
         REQUIRE(legalInput(it.second->getBeginStation()), "Name of Startstation can't be empty.");
     }
     ENSURE(System::Valid_circuit(), "Circuit is not valid.");

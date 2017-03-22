@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp
+Change Dir: /home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_502bf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_502bf.dir/build.make CMakeFiles/cmTC_502bf.dir/build
-make[1]: Entering directory '/home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_502bf.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_502bf.dir/CheckSymbolExists.c.o   -c /home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_502bf
-/opt/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_502bf.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_502bf.dir/CheckSymbolExists.c.o  -o cmTC_502bf -rdynamic 
-CMakeFiles/cmTC_502bf.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_de1ef/fast"
+/usr/bin/make -f CMakeFiles/cmTC_de1ef.dir/build.make CMakeFiles/cmTC_de1ef.dir/build
+make[1]: Entering directory '/home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_de1ef.dir/CheckSymbolExists.c.o
+/usr/bin/gcc     -o CMakeFiles/cmTC_de1ef.dir/CheckSymbolExists.c.o   -c /home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_de1ef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de1ef.dir/link.txt --verbose=1
+/usr/bin/gcc       CMakeFiles/cmTC_de1ef.dir/CheckSymbolExists.c.o  -o cmTC_de1ef -rdynamic 
+CMakeFiles/cmTC_de1ef.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_502bf.dir/build.make:97: recipe for target 'cmTC_502bf' failed
-make[1]: *** [cmTC_502bf] Error 1
-make[1]: Leaving directory '/home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_502bf/fast' failed
-make: *** [cmTC_502bf/fast] Error 2
+CMakeFiles/cmTC_de1ef.dir/build.make:97: recipe for target 'cmTC_de1ef' failed
+make[1]: *** [cmTC_de1ef] Error 1
+make[1]: Leaving directory '/home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_de1ef/fast' failed
+make: *** [cmTC_de1ef/fast] Error 2
 
-File /home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp
+Change Dir: /home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_89456/fast"
-/usr/bin/make -f CMakeFiles/cmTC_89456.dir/build.make CMakeFiles/cmTC_89456.dir/build
-make[1]: Entering directory '/home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_89456.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_89456.dir/CheckFunctionExists.c.o   -c /opt/clion-2016.3.2/bin/cmake/share/cmake-3.6/Modules/CheckFunctionExists.c
-Linking C executable cmTC_89456
-/opt/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89456.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_89456.dir/CheckFunctionExists.c.o  -o cmTC_89456 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_bd268/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bd268.dir/build.make CMakeFiles/cmTC_bd268.dir/build
+make[1]: Entering directory '/home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bd268.dir/CheckFunctionExists.c.o
+/usr/bin/gcc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bd268.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bd268
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd268.dir/link.txt --verbose=1
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_bd268.dir/CheckFunctionExists.c.o  -o cmTC_bd268 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_89456.dir/build.make:97: recipe for target 'cmTC_89456' failed
-make[1]: *** [cmTC_89456] Error 1
-make[1]: Leaving directory '/home/uauser/Desktop/Tram_Netwerk213_1/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_89456/fast' failed
-make: *** [cmTC_89456/fast] Error 2
+CMakeFiles/cmTC_bd268.dir/build.make:97: recipe for target 'cmTC_bd268' failed
+make[1]: *** [cmTC_bd268] Error 1
+make[1]: Leaving directory '/home/uauser/Documents/pse/tram_versie734/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bd268/fast' failed
+make: *** [cmTC_bd268/fast] Error 2
 
 

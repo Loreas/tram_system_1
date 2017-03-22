@@ -165,46 +165,45 @@ TEST_F(SystemInputTests, CircularTest) {
     EXPECT_FALSE(parser.getSystem()->Valid_circuit());
 }
 
-TEST_F(SystemInputTests, EmptyStationName){
-
-    parser.XmlParser("testInput/StationsNaam.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of Station can't be empty.");
-}
-
-TEST_F(SystemInputTests, EmptyPrevStation){
-    parser.XmlParser("testInput/VorigStation.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of previous Station can't be empty.");
-}
-
-TEST_F(SystemInputTests, EmptyNextStation){
-    parser.XmlParser("testInput/VolgendStation.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of next Station can't be empty.");
-}
-
-TEST_F(SystemInputTests, EmptyStationTrack){
-    parser.XmlParser("testInput/StationSpoor.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of track can't be empty.");
-}
-
-TEST_F(SystemInputTests, EmptyLineNr){
-    parser.XmlParser("testInput/TramLijnNr.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Line Number can't be empty.");
-}
-
-TEST_F(SystemInputTests, EmptySeats){
-    parser.XmlParser("testInput/TramZitplaatsen.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Amount of seats can't be none.");
-}
-
-TEST_F(SystemInputTests, EmptySpeed){
-    parser.XmlParser("testInput/TramSnelheid.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Speed can't be none.");
-}
-
-TEST_F(SystemInputTests, EmptyStartingStation){
-    parser.XmlParser("testInput/BeginStationTram.xml");
-    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of Startstation can't be empty.");
-}
+////TEST_F(SystemInputTests, EmptyStationName){
+////    parser.XmlParser("testInput/StationsNaam.xml");
+////    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of Station can't be empty.");
+////}
+//
+//TEST_F(SystemInputTests, EmptyPrevStation){
+//    parser.XmlParser("testInput/VorigStation.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of previous Station can't be empty.");
+//}
+//
+//TEST_F(SystemInputTests, EmptyNextStation){
+//    parser.XmlParser("testInput/VolgendStation.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of next Station can't be empty.");
+//}
+//
+//TEST_F(SystemInputTests, EmptyStationTrack){
+//    parser.XmlParser("testInput/StationSpoor.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Number of track can't be negative.");
+//}
+//
+//TEST_F(SystemInputTests, EmptyLineNr){
+//    parser.XmlParser("testInput/TramLijnNr.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Line Number can't be negative.");
+//}
+//
+//TEST_F(SystemInputTests, EmptySeats){
+//    parser.XmlParser("testInput/TramZitplaatsen.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Amount of seats can't be negative.");
+//}
+//
+//TEST_F(SystemInputTests, EmptySpeed){
+//    parser.XmlParser("testInput/TramSnelheid.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Speed can't be negative.");
+//}
+//
+//TEST_F(SystemInputTests, EmptyStartingStation){
+//    parser.XmlParser("testInput/BeginStationTram.xml");
+//    EXPECT_DEATH(parser.getSystem()->properlyparsed(), "Name of Startstation can't be empty.");
+//}
 
 class SystemOutputTests: public ::testing::Test {
 protected:

@@ -26,8 +26,6 @@ public:
 
     string getElement(TiXmlElement *elem);
 
-    bool legalInput(string input);
-
     bool XmlParser(string inputFile);
 };
 #endif //TRAM_NETWERK_PARSER_H

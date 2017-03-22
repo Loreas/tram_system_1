@@ -5,6 +5,11 @@
 #include "Tram.h"
 
 Tram::Tram() {
+    Tram::lijnNr = -1;
+    Tram::zitplaatsen = -1;
+    Tram::snelheid = -1;
+    Tram::beginStation = "";
+    Tram::huidigStation = "";
     _initCheck = this;
 }
 

@@ -9,8 +9,9 @@
 using namespace std;
 
 int main(){
+
     Parser parser;
-    parser.XmlParser("testInput/StationsNaam.xml");
+    parser.XmlParser("InputFiles/XML_Test.xml");
     System* system = parser.getSystem();
     system->properlyparsed();
     cout << system->parserOutput();

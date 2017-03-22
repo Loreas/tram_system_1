@@ -27,6 +27,7 @@ bool Parser::legalInput(string input){
 }
 
 bool Parser::XmlParser(string inputFile) {
+    bool output = true;
     cout << "======================" << endl;
     cout << "Starting XML Parser..." << endl;
     cout << "======================" << endl << endl;
@@ -42,96 +43,110 @@ bool Parser::XmlParser(string inputFile) {
         doc.Clear();
         return false;
     }
+    System* system = new System;
 
-    System* system = new System();
     for (TiXmlElement *elem = root->FirstChildElement(); elem != NULL;
          elem = elem->NextSiblingElement()) {
-        string elemName;
-        if (elem != NULL) elemName= elem->Value();
+        string elemName = elem->Value();
 
         if (elemName == "station") {
             cout << "Creating new Station:" << endl;
-            Station *station = new Station();
+            Station* station = new Station;
 
             for (TiXmlElement *insideElem = elem->FirstChildElement(); insideElem != NULL;
-                insideElem = insideElem->NextSiblingElement()) {
+                 insideElem = insideElem->NextSiblingElement()) {
                 string elemName = insideElem->Value();
-                if (elemName == "naam") {
-                    cout << "hier dan?";
 
+                if (elemName == "naam") {
                     if (getElement(insideElem) != "") {
-                        cout << "hier wel";
                         system->addStation(getElement(insideElem), station);
                         cout << "   Setting Station name..." << endl;
                         station->setNaam(getElement(insideElem));
-                    }
-                    else{
-                        cout << "hier";
-                        system->addStation(getElement(insideElem), station, false);
-                        cout << "   Setting Station name..." << endl;
-                        station->setNaam(getElement(insideElem));
+                    } else {
+                        output = false;
+                        delete[] station;
+
                     }
                 }
                 if (elemName == "volgende") {
-                    cout << "   Setting next Station..." << endl;
-                    station->setVolgende((getElement(insideElem)));
+                    if (getElement(insideElem) != "") {
+                        cout << "   Setting next Station..." << endl;
+                        station->setVolgende((getElement(insideElem)));
+                    } else {
+                        output = false;
+                    }
                 }
                 if (elemName == "vorige") {
-                    cout << "   Setting previous Station..." << endl;
-                    station->setVorige(getElement(insideElem));
+                    if (getElement(insideElem) != "") {
+                        cout << "   Setting previous Station..." << endl;
+                        station->setVorige(getElement(insideElem));
+                    } else {
+                        output = false;
+                    }
                 }
                 if (elemName == "spoor") {
-                    cout << "   Setting Station track..." << endl;
-                      station->setSpoor(stoi(getElement(insideElem)));
-                 }
+                    if(getElement(insideElem) != "") {
+                        cout << "   Setting Station track..." << endl;
+                        station->setSpoor(stoi(getElement(insideElem)));
+                    }
+                    else{
+                        output = false;
+                    }
+                }
             }
         }
-            else if (elemName == "tram") {
-                Tram *tram = new Tram();
-                cout << "Creating new Tram:" << endl;
+        else if (elemName == "tram") {
+            Tram* tram = new Tram;
+            cout << "Creating new Tram:" << endl;
 
-                for (TiXmlElement *insideElem = elem->FirstChildElement(); insideElem != NULL;
-                     insideElem = insideElem->NextSiblingElement()) {
-                     string elemName = insideElem->Value();
+            for (TiXmlElement *insideElem = elem->FirstChildElement(); insideElem != NULL;
+                 insideElem = insideElem->NextSiblingElement()) {
+                 string elemName = insideElem->Value();
 
 
-                    if (elemName == "lijnNr") {
-                        cout << "   Setting Tram Line Number..." << endl;
+                if (elemName == "lijnNr") {
+                    if (getElement(insideElem) != "") {
+                        system->addTram(stoi(getElement(insideElem)), tram);
+                        cout << "   Setting Tram Line Nr..." << endl;
                         tram->setLijnNr(stoi(getElement(insideElem)));
-                        if (getElement(insideElem) != "") {
-                            system->addTram(stoi(getElement(insideElem)), tram);
-                        }
-                        else{
-                            system->addTram(stoi(getElement(insideElem)), tram, false);
-                        }
-                    }
-                    if (elemName == "zitplaatsen") {
-                        cout << "   Setting Tram seats..." << endl;
-                        tram->setZitplaatsen(stoi(getElement(insideElem)));
-                    }
+                    } else {
+                        output = false;
+                        delete[] tram;
 
-                    if (elemName == "snelheid") {
-                        cout << "   Setting Tram speed..." << endl;
-                        tram->setSnelheid(stoi(getElement(insideElem)));
                     }
-
-                    if (elemName == "beginStation") {
-                        cout << "   Setting Starting Station..." << endl;
-                        tram->setBeginStation(getElement(insideElem));
-                        tram->setHuidigStation(getElement(insideElem));
-                        cout << "   Setting Current Station..." << endl << endl;
-
-                        }
                 }
-        }
+                if (elemName == "zitplaatsen") {
+                    cout << "   Setting Tram seats..." << endl;
+                    if (getElement(insideElem) != "") {
+                        tram->setZitplaatsen(stoi(getElement(insideElem)));
+                    } else {
+                        output = false;
+
+                    }
+                }
+
+                if (elemName == "snelheid") {
+                    cout << "   Setting Tram speed..." << endl;
+                    tram->setSnelheid(stoi(getElement(insideElem)));
+                }
+
+                if (elemName == "beginStation") {
+                    cout << "   Setting Starting Station..." << endl;
+                    tram->setBeginStation(getElement(insideElem));
+                    tram->setHuidigStation(getElement(insideElem));
+                    cout << "   Setting Current Station..." << endl << endl;
+
+                    }
+            }
     }
+}
     Parser::setSystem(system);
 
     cout << "===================" << endl;
     cout << "XML Parser finished" << endl;
     cout << "===================" << endl << endl;
     doc.Clear();
-    return true;
+    return output;
 }
 
 System *Parser::getSystem() const {

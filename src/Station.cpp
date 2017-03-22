@@ -5,6 +5,10 @@
 #include "Station.h"
 
 Station::Station() {
+    Station::naam = "";
+    Station::vorige = "";
+    Station::volgende = "";
+    Station::spoor = -1;
     _initCheck = this;
 }
 
